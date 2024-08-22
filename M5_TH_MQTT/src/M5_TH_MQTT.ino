@@ -20,7 +20,7 @@
 // static const uint8_t G20 / = 20;    Rx
 // static const uint8_t G21 / = 21;    Tx
 
-//#define MeIOT     // If defined ( Me .. MeIOT .. LU ..  Rhy ) use private network for testing, otherwise use IOT standard
+//#define Rhy      // If defined ( Me .. MeIOT .. LU ..  Rhy ) use private network for testing, otherwise use IOT standard
 //#define TEST     // Testmodus
 
 #include <WiFi.h>

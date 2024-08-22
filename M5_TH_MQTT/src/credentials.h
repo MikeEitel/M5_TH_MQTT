@@ -10,7 +10,7 @@
 #define wifi_ssid "xxx"
 #define wifi_password "yyy"
 
-#define myIP "100"                                    // Device ID
+#define myIP "050"                                    // Device ID
 
 // Wifi definitions of this device  
 //IPAddress staticIP(192,168,x,atoi(myIP));           // IOT device IP

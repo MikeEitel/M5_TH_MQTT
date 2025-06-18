@@ -20,7 +20,7 @@
 // static const uint8_t G20 / = 20;    Rx
 // static const uint8_t G21 / = 21;    Tx
 
-//#define Rhy      // If defined ( Me .. MeIOT .. LU ..  Rhy ) use private network for testing, otherwise use IOT standard
+//#define Rhy     // If defined ( Me .. MeIOT .. LU ..  Rhy ) use private network for testing, otherwise use IOT standard
 //#define TEST     // Testmodus
 
 #include <WiFi.h>
@@ -124,8 +124,9 @@ PubSubClient mqttclient;    // MQTT protokol handler
 void setup_wifi() {
   delay(10);
 
+  WiFi.hostname(iamclient);
   WiFi.config(staticIP, gateway, subnet);
-
+  
   Serial.println("");
   Serial.print("Try connect to: ");
   Serial.println(wifi_ssid);
@@ -478,7 +479,7 @@ void readDS() {
       break;
       case 3:{
         dtemp3 = dtemp - tempcorr3;
-        mqttclient.publish(mqtt_out_temp3, String(dtemp3).c_str(), true);}
+        mqttclient.publish(mqtt_out_temp3, String(dtemp3).c_str(), false);}
       break;
       default:{
         Serial.println("DS18 adressing error. Too many sensors");
